@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardService } from 'src/app/services/card.service';
+import { Card } from 'src/app/interfaces/card.interfaces'
 
 @Component({
   selector: 'app-list',
@@ -8,11 +9,14 @@ import { CardService } from 'src/app/services/card.service';
 })
 export class ListComponent {
 
+	cards: Card[] = [];
+
 	constructor(private cardService: CardService) { }
 
 	ngOnInit(): void {
 		this.cardService.getCards().subscribe((res) => {
 			console.log(res);
+			this.cards = res;
 		});
 	}
 
