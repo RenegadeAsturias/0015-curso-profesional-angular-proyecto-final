@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '0015-curso-profesional-angular-proyecto-final';
+
+  onScroll() {
+    console.log("scrolled!!");
+  }
 }

@@ -10,14 +10,14 @@ export class CardService {
   API_URL ='https://db.ygoprodeck.com/api/v7/cardinfo.php';
   constructor(private http: HttpClient) { }
 
-  getCards() {
+  getCards(offset: any) {
     // Prueba sin parámetros y obteníamos todas la cartas:
 		// return this.http.get<Card[]>(this.API_URL);
 
     // Ahora obtenemos las cartas de cien en cien:
     const params = {
       num: 100,
-      offset: 100,
+      offset: offset,
     };
 
     /** Con esto obteníamos: 'data' y 'meta'

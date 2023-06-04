@@ -8,16 +8,21 @@ import { Card } from 'src/app/interfaces/card.interfaces'
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-
 	cards: Card[] = [];
-
+	offset = 0;
 	constructor(private cardService: CardService) { }
-
 	ngOnInit(): void {
-		this.cardService.getCards().subscribe((res) => {
+		this.searchCards();
+	}
+	onScroll() {
+		console.log("scrolled!!");
+		this.offset += 100;
+		this.searchCards();
+	}
+	searchCards() {
+		this.cardService.getCards(this.offset).subscribe((res) => {
 			console.log(res);
-			this.cards = res;
+			this.cards = [...this.cards, ...res];
 		});
 	}
-
 }
