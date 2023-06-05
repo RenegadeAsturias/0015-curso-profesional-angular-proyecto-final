@@ -8,13 +8,15 @@ import { ListComponent } from './pages/list/list.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent, CardComponent, ListComponent, DetailComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, InfiniteScrollModule
+    BrowserModule, AppRoutingModule, HttpClientModule, InfiniteScrollModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
