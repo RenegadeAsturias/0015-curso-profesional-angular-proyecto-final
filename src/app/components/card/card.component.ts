@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Card } from 'src/app/interfaces/card.interfaces';
+
 
 @Component({
   selector: 'app-card',
@@ -10,9 +12,15 @@ export class CardComponent implements OnInit {
 
   @Input() card!:Card;
 
-  constructor() {}
+  constructor(private router: Router ) {}
 
   ngOnInit(): void {
+  }
+
+  goToCard(){
+    this.router.navigate(
+      [`./card/${this.card.id}`]
+    )
   }
 
 }
