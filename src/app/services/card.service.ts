@@ -23,6 +23,13 @@ export class CardService {
     );
   }
 
+  // Obtenemos la carta a partir del 'id' de la URL
+  getCard(id: string) {
+    const params = { id };
+    return this.http
+      .get(this.API_URL, {params})
+      .pipe(map((res: any) => res.data[0]));
+  }
 
   /**
   getCards(offset: any) {
