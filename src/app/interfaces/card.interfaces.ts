@@ -3,6 +3,7 @@ export interface Card {
   id:          number;
   name:        string;
   type:        string;
+  archetype:   string;
   frameType:   string;
   desc:        string;
   atk:         number;
